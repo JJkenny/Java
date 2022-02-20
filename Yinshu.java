@@ -59,7 +59,6 @@ public class Yinshu {
         Scanner sc = new Scanner(System.in);
         while(sc.hasNext()) {
             String str = sc.next();
-            int index = zhaoShui(str, 0, 0);
             ArrayList<Integer> subList = new ArrayList<>();
             ArrayList<ArrayList<Integer>> resultList = new ArrayList<>();
             zhaoShui2(str, 0, subList, resultList);
@@ -72,6 +71,7 @@ public class Yinshu {
         if (index == str.length()) {
             // 成功的递归结束
             resultList.add(new ArrayList<>(subList));
+            subList.clear();
             flag = true;
         } else {
             int number = 0;
